@@ -1,11 +1,11 @@
-# import os, sys
-# pid_file_path = os.path.join(os.environ.get('userprofile'), 'AppData', 'Local', 'Temp', 'raystation.pid')
-#
-# with open(pid_file_path) as f:
-#     os.environ['RAYSTATION_PID'] = f.read()
-#
-# script_client_path = r'C:\Program Files\RaySearch Laboratories\RayStation 12A-SP1\ScriptClient'
-# sys.path.append(script_client_path)
+import os, sys
+pid_file_path = os.path.join(os.environ.get('userprofile'), 'AppData', 'Local', 'Temp', 'raystation.pid')
+
+with open(pid_file_path) as f:
+    os.environ['RAYSTATION_PID'] = f.read()
+
+script_client_path = r'C:\Program Files\RaySearch Laboratories\RayStation 12A-SP1\ScriptClient'
+sys.path.append(script_client_path)
 
 from connect import *
 from contraintes_OARs import *
@@ -179,7 +179,7 @@ class Application(tk.Tk):
         elif volumeValue == 'Volume (%)':
             return "VolumeAtDose"
         else:
-            return "AbsoluteVolumeAtDose"
+            return "DoseAtAbsoluteVolume"
 
 
 
@@ -231,10 +231,10 @@ class Application(tk.Tk):
                                     self.obj.addClinicalGoal(roiName=oar,
                                                              goalCriteria=comparisonSign,
                                                              goalType=volumeValue,
-                                                             acceptanceLevel=doseOrgan[0]['organs'][0]['constraints'][i]['value'],
+                                                             acceptanceLevel=doseOrgan[0]['organs'][0]['constraints'][i]['volume']*100,
                                                              isComparativeGoal=False,
                                                              priority=1,
-                                                             parameterValue=doseOrgan[0]['organs'][0]['constraints'][i]['volume']*100
+                                                             parameterValue=doseOrgan[0]['organs'][0]['constraints'][i]['value']
                                                              )
                                 except:
                                     print('No ROI or POI named ', organ, ' exists')
