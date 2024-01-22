@@ -11,7 +11,7 @@ from connect import *
 
 plan = get_current("Plan")
 case = get_current("Case")
-
+print('toto')
 # print('toto : ', plan.TreatmentCourse.EvaluationSetup.EvaluationFunctions[0])
 
 

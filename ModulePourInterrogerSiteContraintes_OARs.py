@@ -35,3 +35,4 @@ doseVessie = get_indication(location='ABDOMEN',
                             fraction='1',
                             patient='Adulte')
 print(doseVessie)
+print('toto')

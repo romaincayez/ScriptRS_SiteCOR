@@ -184,7 +184,7 @@ class Application(tk.Tk):
 
 
     def getConstraintsAndObjectives(self, organs):
-        print('organs : ', organs)
+        print('organes : ', organs)
         plan = get_current("Plan")
         case = get_current("Case")
         vari = self.comboboxLocalisations.get()

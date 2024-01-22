@@ -218,7 +218,7 @@ class Application(tk.Tk):
 
 
     def getConstraintsAndObjectives(self, organs):
-        print('organs : ', organs)
+        print('organes : ', organs)
         vari = self.comboboxLocalisations.get()
         for organ in organs:
             for oar in self.oarList:
