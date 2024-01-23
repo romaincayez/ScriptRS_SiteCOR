@@ -1,11 +1,11 @@
-import os, sys
-pid_file_path = os.path.join(os.environ.get('userprofile'), 'AppData', 'Local', 'Temp', 'raystation.pid')
-
-with open(pid_file_path) as f:
-    os.environ['RAYSTATION_PID'] = f.read()
-
-script_client_path = r'C:\Program Files\RaySearch Laboratories\RayStation 12A-SP1\ScriptClient'
-sys.path.append(script_client_path)
+# import os, sys
+# pid_file_path = os.path.join(os.environ.get('userprofile'), 'AppData', 'Local', 'Temp', 'raystation.pid')
+#
+# with open(pid_file_path) as f:
+#     os.environ['RAYSTATION_PID'] = f.read()
+#
+# script_client_path = r'C:\Program Files\RaySearch Laboratories\RayStation 12A-SP1\ScriptClient'
+# sys.path.append(script_client_path)
 
 from connect import *
 from contraintes_OARs import *
