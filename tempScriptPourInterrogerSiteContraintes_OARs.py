@@ -272,10 +272,10 @@ class Application(tk.Tk):
                                     self.obj.addClinicalGoal(roiName=oar,
                                                              goalCriteria=comparisonSign,
                                                              goalType=volumeValue,
-                                                             acceptanceLevel=doseOrgan[0]['organs'][0]['objectives'][j]['value'],
+                                                             acceptanceLevel=doseOrgan[0]['organs'][0]['objectives'][j]['volume']*100,
                                                              isComparativeGoal=False,
                                                              priority=2147483647,
-                                                             parameterValue=doseOrgan[0]['organs'][0]['objectives'][j]['volume']*100
+                                                             parameterValue=doseOrgan[0]['organs'][0]['objectives'][j]['value']
                                                              )
                                 except:
                                     print('No ROI or POI named ', organ, ' exists')
